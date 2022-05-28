@@ -1,0 +1,101 @@
+# セルのスタイル
+# sample:
+#   font:
+#     name: メイリオ # フォント名
+#     size: 20  # 文字サイズ
+#     underline: single # アンダーライン
+#     bold: True  # 太字
+#     color: FF0F0F # 色
+#   alignment:
+#     horizontal: center # 文字位置（水平）
+#     vertical: top # 文字位置（垂直）
+#   fill:
+#     patternType: solid # 塗りつぶしのスタイル
+#     fgColor: c0c0c0 # 色
+#   border:
+#     top: 
+#       border_style: medium # 枠線の種類
+#       color: 2f4f4f
+#     bottom: 
+#       border_style: medium
+#       color: ffa500
+#     diagonal: 
+#       border_style: hair
+#       color: dc143c
+
+# 基本　**　必須　** これに上書きしていく形
+basic:
+  font:
+    name: メイリオ
+    size: 11
+
+# 見出し
+h1:
+  font:
+    size: 19
+    bold: True
+h2:
+  font:
+    size: 17
+    bold: True
+h3:
+  font:
+    size: 15
+    bold: True
+h4:
+  font:
+    size: 13
+    bold: True
+h5:
+  font:
+    bold: True
+
+highlight:
+  font:
+    bold: True
+    color: ff0000
+
+hyperlink:
+  font:
+    color: 0075c2
+    underline: single
+
+table_head:
+  font:
+    bold: True
+  fill:
+    patternType: solid
+    fgColor: 9fc24d
+  alignment:
+    horizontal: center
+  border:
+    top:
+      border_style: thin
+      color: 004d25
+    bottom:
+      border_style: thin
+      color: 004d25
+    left:
+      border_style: thin
+      color: 004d25
+    right:
+      border_style: thin
+      color: 004d25
+
+table_value:
+  alignment:
+    horizontal: center
+  border:
+    top:
+      border_style: thin
+      color: 004d25
+    bottom:
+      border_style: thin
+      color: 004d25
+    left:
+      border_style: thin
+      color: 004d25
+    right:
+      border_style: thin
+      color: 004d25
+
