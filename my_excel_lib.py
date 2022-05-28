@@ -69,7 +69,8 @@ class MyExcelLib():
         position = get_cell_position(position)
         cell = self._book[sheet].cell(*position)
         return cell.value
-
+    
+    # 書式
     def set_style(self, sheet, position, style):
         """セルに対してスタイルの適用"""
         position = get_cell_position(position)
@@ -91,6 +92,30 @@ class MyExcelLib():
             if 'diagonal' in border_style.keys():
                 border_style['diagonalDown'] = True
             cell.border = openpyxl.styles.Border(**border_style)
+    
+    def concat_cells(self, sheet, start_position, end_position):
+        """セルの結合"""
+        start_position = get_cell_position(start_position)
+        end_position = get_cell_position(end_position)
+        self._book[sheet].merge_cells(
+            start_row=start_position[0], 
+            start_column=start_position[1],
+            end_row=end_position[0],
+            end_column=end_position[1])
+
+    def set_df(self, df, sheet, position):
+        """dfの配置"""
+        position = get_cell_position(position)
+        
+        # df左上
+        self.set_value('', sheet, position, 'df_head')
+        for i, c in enumerate(df.columns):
+            self.set_value(c, sheet, (position[0], position[1]+(i+1)), 'df_head')
+        for i, idx in enumerate(df.index):
+            self.set_value(idx, sheet, (position[0]+i+1, position[1]), 'df_value')
+        for r in range(df.shape[0]):
+            for c in range(df.shape[1]):
+                self.set_value(df.iat[r,c], sheet, (position[0]+1+r, position[1]+1+c), 'df_value')
 
 def import_config(file_name, path_to_config=path_to_config):
     """設定ファイル(yml)を読み込んで返す
