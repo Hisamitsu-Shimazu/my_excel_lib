@@ -23,7 +23,7 @@
 #       border_style: hair
 #       color: dc143c
 
-# 基本
+# 基本 **必須**
 basic:
   font:
     name: メイリオ
@@ -32,44 +32,31 @@ basic:
 # 見出し
 h1:
   font:
-    name: メイリオ
     size: 19
     bold: True
 h2:
   font:
-    name: メイリオ
     size: 17
     bold: True
 h3:
   font:
-    name: メイリオ
     size: 15
     bold: True
-h4:
-  font:
-    name: メイリオ
-    size: 13
-    bold: True
-h5:
-  font:
-    name: メイリオ
-    bold: True
 
+# 特殊な値
 highlight:
   font:
-    name: メイリオ
     bold: True
     color: ff0000
 
 hyperlink:
   font:
-    name: メイリオ
     color: 0075c2
     underline: single
 
+# 表
 table_head:
   font:
-    name: メイリオ
     bold: True
   fill:
     patternType: solid
@@ -91,8 +78,6 @@ table_head:
       color: 004d25
 
 table_value:
-  font:
-    name: メイリオ
   alignment:
     horizontal: center
   border:
@@ -109,9 +94,9 @@ table_value:
       border_style: thin
       color: 004d25
 
+# dataframe
 df_head:
   font:
-    name: メイリオ
     bold: True
     color: ffffff
   fill:
@@ -134,8 +119,6 @@ df_head:
       color: 192f60
 
 df_value:
-  font:
-    name: メイリオ
   alignment:
     horizontal: center
   border:
